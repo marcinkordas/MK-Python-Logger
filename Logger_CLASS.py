@@ -4,9 +4,9 @@ import os
 
 class Logger():
     def __init__(self, filename, directory, parent_dir = os.getcwd()):
-        self.filename = filename
+      self.filename = filename
         self.directory = directory
-          
+        self.file_beginning = True 
         # Parent Directory path
         self.parent_dir = parent_dir
 
@@ -18,6 +18,7 @@ class Logger():
             print("Directory '% s' created" % self.directory)
         else:
             self.erase()
+            self.file_beginning = True
         
     def append(self, *argv, **kwargs):
         self.append_end_NL(argv)    
